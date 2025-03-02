@@ -1,7 +1,7 @@
 # include <stdio.h>
 #include <stdbool.h>
 
-bool isSafe(int sudoku[][], int row, int col, int digit) {
+bool isSafe(int sudoku[9][9], int row, int col, int digit) {
     // Column 
     for(int i=0; i<=8; i++) {
         if(sudoku [i][col] == digit) {
@@ -31,7 +31,7 @@ bool isSafe(int sudoku[][], int row, int col, int digit) {
     return true;
 }
 
-bool sudokuSolver(int sudoku[][], int row, int col) {
+bool sudokuSolver(int sudoku[9][9], int row, int col) {
     // Base case
     if(row == 9) {
         return true;
@@ -59,7 +59,7 @@ bool sudokuSolver(int sudoku[][], int row, int col) {
     return false;
 }
 
-void printSudoku(int sudoku[][]) {
+void printSudoku(int sudoku[9][9]) {
     for(int i=0; i<9; i++) {
         for(int j=0; j<9; j++) {
             printf("%d ",sudoku[i][j]);
@@ -69,7 +69,7 @@ void printSudoku(int sudoku[][]) {
 }
 
 int main() {
-    int sudoku[][] = { {0, 0, 8, 0, 0, 0, 0, 0, 0},
+    int sudoku[9][9] = { {0, 0, 8, 0, 0, 0, 0, 0, 0},
         {4, 9, 0, 1, 5, 7, 0, 0, 2},
         {0, 0, 3, 0, 0, 4, 1, 9, 0},
         {1, 8, 5, 0, 6, 0, 0, 2, 0},
