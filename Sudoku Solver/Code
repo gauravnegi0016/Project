@@ -1,5 +1,35 @@
 # include <stdio.h>
 
+bool isSafe(int sudoku[][], int row, int col, int digit) {
+    // Column 
+    for(int i=0; i<=8; i++) {
+        if(sudoku [i][col] == digit) {
+            return false;
+        }
+    }
+
+    // Row
+    for(int j=0; j<=8; j++) {
+        if(sudoku[row][j] == digit) {
+            return false;
+        }
+    }
+
+    // Grid
+    int sr = (row/3) * 3;
+    int sc = (col/3) * 3;
+
+    // 3x3 grid
+    for(int i=sr; i<sr+3; i++) {
+        for(int j=sc; j<sc+3; j++) {
+            if(sudoku[i][j] == digit) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 bool sudokuSolver(int sudoku[][], int row, int col) {
     // Base case
     if(row == 9) {
