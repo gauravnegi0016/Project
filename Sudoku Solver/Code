@@ -77,4 +77,11 @@ int main() {
         {0, 3, 0, 0, 7, 2, 0, 0, 4},
         {0, 4, 9, 0, 3, 0, 0, 5, 7},
         {8, 2, 7, 0, 0, 9, 0, 1, 3} };
+
+    if(sudokuSolver(sudoku, 0, 0)) {
+        printf("solution exists\n");
+        printSudoku(sudoku);
+    } else {
+        print("solution does not exist\n");
+    }
 }
