@@ -83,6 +83,6 @@ int main() {
         printf("solution exists\n");
         printSudoku(sudoku);
     } else {
-        print("solution does not exist\n");
+        printf("solution does not exist\n");
     }
 }
