@@ -62,7 +62,7 @@ bool sudokuSolver(int sudoku[][], int row, int col) {
 void printSudoku(int sudoku[][]) {
     for(int i=0; i<9; i++) {
         for(int j=0; j<9; j++) {
-            printf(sudoku[i][j]+" ");
+            printf("%d "sudoku[i][j]);
         }
         printf("\n");
     }
